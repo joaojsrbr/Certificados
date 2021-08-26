@@ -1,6 +1,6 @@
 ## DIO-DIGITAL INNOVATION ONE
 
-| Certificado | Link | 
+| Certificados | 
 | --- | --- |
 | Aprenda o que são Estrutura de Dados e Algoritmos |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Aprenda%20o%20que%20são%20Estrutura%20de%20Dados%20e%20Algoritmos.pdf)|
 | Bem-vindo à DIO |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Bem-vindo%20à%20DIO.pdf)|
@@ -19,13 +19,13 @@
 
 ## IFES
 
-| Certificado | Link | 
+| Certificados | 
 | --- | --- |
 | INTRODUÇÃO AOS SIMULADORES DE REDES |[Link](https://github.com/joaojsrbr/Certificados/blob/master/Ifes/Certificado%20ifes.pdf)|[Link](https://github.com/joaojsrbr/Certificados/blob/master/Ifes/INTRODUÇÃO%20AOS%20SIMULADORES%20DE%20REDES.pdf)|
 
 ## COCA-COLA
 
-| Certificado | Link | 
+| Certificados | 
 | --- | --- |
 | Coletivo Online |[Link](https://github.com/joaojsrbr/Certificados/blob/master/Coca-Cola/Coca-Cola.pdf)|
 
