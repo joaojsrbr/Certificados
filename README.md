@@ -28,7 +28,7 @@
   **CONTATO**
   
   <p align="left">
-  <a href="#" alt="Gmail">
+  <a href="#" alt="https://mail.google.com/mail/u/?authuser=joaovitor.jsr@gmail.com">
   <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white&link=https://mail.google.com/mail/u/?authuser=joaovitor.jsr@gmail.com" /></a>
 
   <a href="#" alt="WhatsApp">
