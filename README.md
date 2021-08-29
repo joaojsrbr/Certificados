@@ -67,11 +67,11 @@
   
   ## **GitHub Estatísticas**
 
-<a href="https://github.com/Gurupreet">
+<a href="https://github.com/joaojsrbr">
   <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=joaojsrbr&theme=dracula&hide_langs_below=5" />
 </a>
 
-<a href="https://github.com/Gurupreet">
+<a href="https://github.com/joaojsrbr">
  <img align="center" src="https://github-readme-stats.vercel.app/api?username=joaojsrbr&show_icons=true&theme=dracula&line_height=27" alt="**joaojsrbr** github stats"/>
 </a>
 
