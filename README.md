@@ -50,8 +50,11 @@
 | Resolvendo Desafios de Código em Java |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Resolvendo%20Desafios%20de%20Código%20em%20Java.pdf)|
 | Trabalhando com Banco de Dados utilizando JDBC e JPA |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Trabalhando%20com%20Banco%20de%20Dados%20utilizando%20JDBC%20e%20JPA.pdf)|
 | Conceitos e melhores práticas com banco de dados PostgreSQL |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Bem-vindo%20à%20DIO.pdf)|
-| Introdução a criação de websites |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Introdução%20a%20criação%20de%20websites.pdf)|
+| --- | --- |
+| Introdução a criação de websites com HTML5 E CSS3 |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Introdução%20a%20criação%20de%20websites%20com%20HTML5%20E%20CSS3.pdf)|
 | Introdução ao Angular 8 |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Introdução%20ao%20Angular%208.pdf)|
+| Técnicas avançadas em Angular 8 |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Técnicas%20avançadas%20em%20Angular%208.pdf)|
+| Aplicações avançadas com Angular |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Aplicações%20avançadas%20com%20Angular.pdf)|
 
 ## IFES
 
