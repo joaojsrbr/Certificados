@@ -7,6 +7,7 @@
   ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
   ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
   ![POSTGRESQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+  ![ANGULAR 8](	https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
 
 **Utilidades**
 
@@ -21,7 +22,6 @@
 **Ferramentas de Desenvolvimento**
 
   ![Visual Studio Code](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
-  ![Visual Studio 2019](https://img.shields.io/badge/Visual_Studio-5C2D91?style=for-the-badge&logo=visual%20studio&logoColor=white)
   ![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white)
   
   
@@ -51,6 +51,7 @@
 | Trabalhando com Banco de Dados utilizando JDBC e JPA |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Trabalhando%20com%20Banco%20de%20Dados%20utilizando%20JDBC%20e%20JPA.pdf)|
 | Conceitos e melhores práticas com banco de dados PostgreSQL |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Bem-vindo%20à%20DIO.pdf)|
 | Introdução a criação de websites |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Introdução%20a%20criação%20de%20websites.pdf)|
+| Introdução ao Angular 8 |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Introdução%20ao%20Angular%208.pdf)|
 
 ## IFES
 
