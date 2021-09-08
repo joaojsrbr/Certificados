@@ -7,7 +7,8 @@
   ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
   ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
   ![POSTGRESQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
-  ![ANGULAR 8](	https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+  ![ANGULAR](	https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+  ![TYPESCRIPT](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
 **Utilidades**
 
@@ -17,7 +18,6 @@
 
   ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
   ![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
-  ![Docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)
 
 **Ferramentas de Desenvolvimento**
 
@@ -50,8 +50,10 @@
 | Resolvendo Desafios de Código em Java |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Resolvendo%20Desafios%20de%20Código%20em%20Java.pdf)|
 | Trabalhando com Banco de Dados utilizando JDBC e JPA |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Trabalhando%20com%20Banco%20de%20Dados%20utilizando%20JDBC%20e%20JPA.pdf)|
 | Conceitos e melhores práticas com banco de dados PostgreSQL |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Bem-vindo%20à%20DIO.pdf)|
-| Introdução a criação de websites |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Introdução%20a%20criação%20de%20websites.pdf)|
+| Introdução a criação de websites com HTML5 E CSS3 |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Introdução%20a%20criação%20de%20websites%20com%20HTML5%20E%20CSS3.pdf)|
 | Introdução ao Angular 8 |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Introdução%20ao%20Angular%208.pdf)|
+| Técnicas avançadas em Angular 8 |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Técnicas%20avançadas%20em%20Angular%208.pdf)|
+| Aplicações avançadas com Angular |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Aplicações%20avançadas%20com%20Angular.pdf)|
 
 ## IFES
 
