@@ -32,29 +32,29 @@
  [![Gmail Badge](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white&link=mailto:joaovitor.jsr@gmail.com)](mailto:joaovitor.jsr@gmail.com)
   
 
-## DIO DIGITAL INNOVATION ONE - [Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Santander%20Bootcamp%20-%20Fullstack%20Developer.pdf)
+## DIO DIGITAL INNOVATION ONE - [Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Santander%20Bootcamp%20-%20Fullstack%20Developer/Santander%20Bootcamp%20-%20Fullstack%20Developer.pdf)
 
 | Certificados | Link |
 | --- | --- |
-| Aprenda o que são Estrutura de Dados e Algoritmos |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Aprenda%20o%20que%20são%20Estrutura%20de%20Dados%20e%20Algoritmos.pdf)|
-| Bem-vindo à DIO |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Bem-vindo%20à%20DIO.pdf)|
-| Boas-vindas ao Bootcamp Santander Fullstack |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Boas-vindas%20ao%20Bootcamp%20Santander%20Fullstack.pdf)|
-| Construindo um projeto com arquitetura baseada em microsserviços usando Spring Cloud |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Construindo%20um%20projeto%20com%20arquitetura%20baseada%20em%20microsserviços%20usando%20Spring%20Cloud.pdf)|
-| Construindo um sistema de controle de ponto e acesso com Spring Boot |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Construindo%20um%20sistema%20de%20controle%20de%20ponto%20e%20acesso%20com%20Spring%20Boot.pdf)|
-| Desenvolvendo um sistema de gerenciamento de pessoas em API REST com Spring Boot |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Desenvolvendo%20um%20sistema%20de%20gerenciamento%20de%20pessoas%20em%20API%20REST%20com%20Spring%20Boot.pdf)|
-| Desenvolvimento avançado em Java |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Desenvolvimento%20avançado%20em%20Java.pdf)|
-| Desenvolvimento básico em Java |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Desenvolvimento%20básico%20em%20Java.pdf)|
-| Implementando Collections e Streams com Java |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Implementando%20Collections%20e%20Streams%20com%20Java.pdf)|
-| Introdução ao Git e ao GitHub |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Introdução%20ao%20Git%20e%20ao%20GitHub.pdf)|
-| Lógica de programação essencial |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Lógica%20de%20programação%20essencial.pdf)|
-| Resolvendo Desafios de Código em Java |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Resolvendo%20Desafios%20de%20Código%20em%20Java.pdf)|
-| Trabalhando com Banco de Dados utilizando JDBC e JPA |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Trabalhando%20com%20Banco%20de%20Dados%20utilizando%20JDBC%20e%20JPA.pdf)|
-| Conceitos e melhores práticas com banco de dados PostgreSQL |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Bem-vindo%20à%20DIO.pdf)|
-| Introdução a criação de websites com HTML5 E CSS3 |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Introdução%20a%20criação%20de%20websites%20com%20HTML5%20E%20CSS3.pdf)|
-| Introdução ao Angular 8 |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Introdução%20ao%20Angular%208.pdf)|
-| Técnicas avançadas em Angular 8 |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Técnicas%20avançadas%20em%20Angular%208.pdf)|
-| Aplicações avançadas com Angular |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Aplicações%20avançadas%20com%20Angular.pdf)|
-| Santander Bootcamp - Fullstack Developer |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Santander%20Bootcamp%20-%20Fullstack%20Developer.pdf)|
+| Aprenda o que são Estrutura de Dados e Algoritmos |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Santander%20Bootcamp%20-%20Fullstack%20Developer/Aprenda%20o%20que%20são%20Estrutura%20de%20Dados%20e%20Algoritmos.pdf)|
+| Bem-vindo à DIO |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Santander%20Bootcamp%20-%20Fullstack%20Developer/Bem-vindo%20à%20DIO.pdf)|
+| Boas-vindas ao Bootcamp Santander Fullstack |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Santander%20Bootcamp%20-%20Fullstack%20Developer/Boas-vindas%20ao%20Bootcamp%20Santander%20Fullstack.pdf)|
+| Construindo um projeto com arquitetura baseada em microsserviços usando Spring Cloud |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Santander%20Bootcamp%20-%20Fullstack%20Developer/Construindo%20um%20projeto%20com%20arquitetura%20baseada%20em%20microsserviços%20usando%20Spring%20Cloud.pdf)|
+| Construindo um sistema de controle de ponto e acesso com Spring Boot |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Santander%20Bootcamp%20-%20Fullstack%20Developer/Construindo%20um%20sistema%20de%20controle%20de%20ponto%20e%20acesso%20com%20Spring%20Boot.pdf)|
+| Desenvolvendo um sistema de gerenciamento de pessoas em API REST com Spring Boot |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Santander%20Bootcamp%20-%20Fullstack%20Developer/Desenvolvendo%20um%20sistema%20de%20gerenciamento%20de%20pessoas%20em%20API%20REST%20com%20Spring%20Boot.pdf)|
+| Desenvolvimento avançado em Java |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Santander%20Bootcamp%20-%20Fullstack%20Developer/Desenvolvimento%20avançado%20em%20Java.pdf)|
+| Desenvolvimento básico em Java |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Santander%20Bootcamp%20-%20Fullstack%20Developer/Desenvolvimento%20básico%20em%20Java.pdf)|
+| Implementando Collections e Streams com Java |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Santander%20Bootcamp%20-%20Fullstack%20Developer/Implementando%20Collections%20e%20Streams%20com%20Java.pdf)|
+| Introdução ao Git e ao GitHub |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Santander%20Bootcamp%20-%20Fullstack%20Developer/Introdução%20ao%20Git%20e%20ao%20GitHub.pdf)|
+| Lógica de programação essencial |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Santander%20Bootcamp%20-%20Fullstack%20Developer/Lógica%20de%20programação%20essencial.pdf)|
+| Resolvendo Desafios de Código em Java |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Santander%20Bootcamp%20-%20Fullstack%20Developer/Resolvendo%20Desafios%20de%20Código%20em%20Java.pdf)|
+| Trabalhando com Banco de Dados utilizando JDBC e JPA |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Santander%20Bootcamp%20-%20Fullstack%20Developer/Trabalhando%20com%20Banco%20de%20Dados%20utilizando%20JDBC%20e%20JPA.pdf)|
+| Conceitos e melhores práticas com banco de dados PostgreSQL |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Santander%20Bootcamp%20-%20Fullstack%20Developer/Bem-vindo%20à%20DIO.pdf)|
+| Introdução a criação de websites com HTML5 E CSS3 |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Santander%20Bootcamp%20-%20Fullstack%20Developer/Introdução%20a%20criação%20de%20websites%20com%20HTML5%20E%20CSS3.pdf)|
+| Introdução ao Angular 8 |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Santander%20Bootcamp%20-%20Fullstack%20Developer/Introdução%20ao%20Angular%208.pdf)|
+| Técnicas avançadas em Angular 8 |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Santander%20Bootcamp%20-%20Fullstack%20Developer/Técnicas%20avançadas%20em%20Angular%208.pdf)|
+| Aplicações avançadas com Angular |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Santander%20Bootcamp%20-%20Fullstack%20Developer/Aplicações%20avançadas%20com%20Angular.pdf)|
+| Santander Bootcamp - Fullstack Developer |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Santander%20Bootcamp%20-%20Fullstack%20Developer/Santander%20Bootcamp%20-%20Fullstack%20Developer.pdf)|
 
 ## IFES
 
