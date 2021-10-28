@@ -36,7 +36,7 @@
 
 | Certificados | Link |
 | --- | --- |
-| Aprenda o que são Estrutura de Dados e Algoritmos |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Aprenda%20o%20que%20são%20Estrutura%20de%20Dados%20e%20Algoritmos.pdf)|
+| Aprenda o que são Estrutura de Dados e Algoritmos |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Santander%20Bootcamp%20-%20Fullstack%20Developer/Aprenda%20o%20que%20são%20Estrutura%20de%20Dados%20e%20Algoritmos.pdf)|
 | Bem-vindo à DIO |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Bem-vindo%20à%20DIO.pdf)|
 | Boas-vindas ao Bootcamp Santander Fullstack |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Boas-vindas%20ao%20Bootcamp%20Santander%20Fullstack.pdf)|
 | Construindo um projeto com arquitetura baseada em microsserviços usando Spring Cloud |[Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Construindo%20um%20projeto%20com%20arquitetura%20baseada%20em%20microsserviços%20usando%20Spring%20Cloud.pdf)|
