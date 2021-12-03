@@ -68,6 +68,12 @@
 | --- | --- |
 | Coletivo Online |[Link](https://github.com/joaojsrbr/Certificados/blob/master/Coca-Cola/Coca-Cola.pdf)|
 
+## QUALIFICA ES
+
+| Certificados | Link |
+| --- | --- |
+| Assistente de Tecnologia da Informação |[Link](https://github.com/joaojsrbr/Certificados/blob/master/qualifica%20es/Assistente%20de%20tecnologia%20da%20informação.pdf)|
+
   
   ## **GitHub Estatísticas**
 
