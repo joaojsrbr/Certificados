@@ -32,7 +32,7 @@
  [![Gmail Badge](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white&link=mailto:joaovitor.jsr@gmail.com)](mailto:joaovitor.jsr@gmail.com)
   
 
-## DIO DIGITAL INNOVATION ONE - [Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Santander%20Bootcamp%20-%20Fullstack%20Developer/Santander%20Bootcamp%20-%20Fullstack%20Developer.pdf)
+##  DIO DIGITAL INNOVATION ONE - [Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Santander%20Bootcamp%20-%20Fullstack%20Developer/Santander%20Bootcamp%20-%20Fullstack%20Developer.pdf)
 
 | Certificados | Link |
 | --- | --- |
@@ -73,6 +73,13 @@
 | Certificados | Link |
 | --- | --- |
 | Assistente de Tecnologia da Informação |[Link](https://github.com/joaojsrbr/Certificados/blob/master/qualifica%20es/Assistente%20de%20tecnologia%20da%20informação.pdf)|
+
+## Baita.io
+
+| Certificados | Link |
+| --- | --- |
+| Lógica de programação com Dart |[Link](https://github.com/joaojsrbr/Certificados/blob/master/Baita.io/Dart/L%C3%B3gica%20de%20programa%C3%A7%C3%A3o%20com%20Dart%20-%20balta.io.pdf)|
+| Criando seu primeiro App com Flutter |[Link](https://github.com/joaojsrbr/Certificados/blob/master/Baita.io/Flutter/Criando%20seu%20primeiro%20App%20com%20Flutter.pdf)|
 
   
   ## **GitHub Estatísticas**
