@@ -74,12 +74,19 @@
 | --- | --- |
 | Assistente de Tecnologia da Informação |[Link](https://github.com/joaojsrbr/Certificados/blob/master/qualifica%20es/Assistente%20de%20tecnologia%20da%20informação.pdf)|
 
-## Baita.io
+## Sebrae
 
 | Certificados | Link |
 | --- | --- |
 | Lógica de programação com Dart |[Link](https://github.com/joaojsrbr/Certificados/blob/master/Baita.io/Dart/L%C3%B3gica%20de%20programa%C3%A7%C3%A3o%20com%20Dart%20-%20balta.io.pdf)|
 | Criando seu primeiro App com Flutter |[Link](https://github.com/joaojsrbr/Certificados/blob/master/Baita.io/Flutter/Criando%20seu%20primeiro%20App%20com%20Flutter.pdf)|
+
+## Baita.io
+
+| Certificados | Link |
+| --- | --- |
+| Gestão de pessoas |[Link](https://github.com/joaojsrbr/Certificados/blob/master/Sebrae/Gest%C3%A3o%20de%20pessoas.pdf)|
+
 
   
   ## **GitHub Estatísticas**
