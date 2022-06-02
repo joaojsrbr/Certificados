@@ -30,6 +30,12 @@
  [![WhatsApp: João Vitor](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white&link=https://api.whatsapp.com/send?phone=5527998993682&text=Oi)](https://api.whatsapp.com/send?phone=5527998993682&text=Oi)
 [![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white&link=https://t.me/joaojsrbr)](https://t.me/joaojsrbr)
  [![Gmail Badge](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white&link=mailto:joaovitor.jsr@gmail.com)](mailto:joaovitor.jsr@gmail.com)
+ 
+ ## CC50
+
+| Certificados | Link |
+| --- | --- |
+| CC50: Introdução à Ciência da Computação - O Curso de Harvard, no Brasil |[Link](https://github.com/joaojsrbr/Certificados/blob/master/CC50%20Introdu%C3%A7%C3%A3o%20%C3%A0%20Ci%C3%AAncia%20da%20Computa%C3%A7%C3%A3o/course-84414-frsxc.pdf)|
   
 
 ##  DIO DIGITAL INNOVATION ONE - [Link](https://github.com/joaojsrbr/Certificados/blob/master/DIO/Santander%20Bootcamp%20-%20Fullstack%20Developer/Santander%20Bootcamp%20-%20Fullstack%20Developer.pdf)
