@@ -86,6 +86,7 @@
 | --- | --- |
 | Lógica de programação com Dart |[Link](https://github.com/joaojsrbr/Certificados/blob/master/Baita.io/Dart/L%C3%B3gica%20de%20programa%C3%A7%C3%A3o%20com%20Dart%20-%20balta.io.pdf)|
 | Criando seu primeiro App com Flutter |[Link](https://github.com/joaojsrbr/Certificados/blob/master/Baita.io/Flutter/Criando%20seu%20primeiro%20App%20com%20Flutter.pdf)|
+| fundamentos do C# |[Link](https://github.com/joaojsrbr/Certificados/blob/master/Baita.io/C%20Sharp/fundamentos%20do%20C%20Sharp.pdf)|
 
 ## Sebrae
 
