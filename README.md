@@ -66,7 +66,19 @@
 
 | Certificados | Link |
 | --- | --- |
-| INTRODUÇÃO AOS SIMULADORES DE REDES |[Link](https://github.com/joaojsrbr/Certificados/blob/master/Ifes/Certificado%20ifes.pdf)|[Link](https://github.com/joaojsrbr/Certificados/blob/master/Ifes/INTRODUÇÃO%20AOS%20SIMULADORES%20DE%20REDES.pdf)|
+| JORNADA DE ACELERAÇÃO DO PRIMEIRO EMPREGO |[Link](https://github.com/joaojsrbr/Certificados/blob/master/Descomplica/Certificado%20de%20Participa%C3%A7%C3%A3o%20-%20Jo%C3%A3o%20Vitor%20Da%20Silva%20Rocha.pdf)|[Link](https://github.com/joaojsrbr/Certificados/blob/master/Descomplica/Certificado%20de%20Participa%C3%A7%C3%A3o%20-%20Jo%C3%A3o%20Vitor%20Da%20Silva%20Rocha.pdf)|
+
+## DESCOMPLICA
+
+| Certificados | Link |
+| --- | --- |
+| INTRODUÇÃO AOS SIMULADORES DE REDES |[Link](https://github.com/joaojsrbr/Certificados/blob/master/Descomplica/Certificado%20de%20Participa%C3%A7%C3%A3o%20-%20Jo%C3%A3o%20Vitor%20Da%20Silva%20Rocha.pdf)|[Link](https://github.com/joaojsrbr/Certificados/blob/master/Descomplica/Certificado%20de%20Participa%C3%A7%C3%A3o%20-%20Jo%C3%A3o%20Vitor%20Da%20Silva%20Rocha.pdf)|
+
+## COURSERA
+
+| Certificados | Link |
+| --- | --- |
+| FUNDAMENTOS DO SUPORTE TÉCNICO |[Link](https://github.com/joaojsrbr/Certificados/blob/master/Coursera/Coursera%20Y5EQEW7YR2PM.pdf)|[Link](https://github.com/joaojsrbr/Certificados/blob/master/Coursera/Coursera%20Y5EQEW7YR2PM.pdf)|
 
 ## COCA-COLA
 
