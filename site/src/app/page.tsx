@@ -133,7 +133,10 @@ export default function Home() {
   };
 
   return (
-    <div className="relative min-h-screen text-slate-100 selection:bg-indigo-500/30 selection:text-white pb-16">
+    <div
+      suppressHydrationWarning
+      className="relative min-h-screen text-slate-100 selection:bg-indigo-500/30 selection:text-white pb-16"
+    >
       {/* Background Effect */}
       <BackgroundAurora />
 

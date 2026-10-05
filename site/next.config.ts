@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
+const isProd = process.env.NODE_ENV === "production";
+
 const nextConfig: NextConfig = {
-  output: "export",
+  // Ativa output: "export" no build de produção para o GitHub Pages
+  ...(isProd ? { output: "export" } : {}),
   basePath: "/Certificados",
   images: {
     unoptimized: true,
