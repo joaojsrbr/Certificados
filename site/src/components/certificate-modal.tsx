@@ -13,11 +13,13 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   ExternalLink,
+  Download,
   Copy,
   Check,
   Award,
   Sparkles,
   BookOpen,
+  Maximize2,
 } from "lucide-react";
 
 interface CertificateModalProps {
@@ -38,25 +40,29 @@ export function CertificateModal({
   const inst = INSTITUTIONS[certificate.institutionKey];
 
   const handleCopyLink = () => {
-    navigator.clipboard.writeText(certificate.pdfUrl);
+    const fullUrl =
+      typeof window !== "undefined"
+        ? `${window.location.origin}${certificate.pdfUrl}`
+        : certificate.pdfUrl;
+    navigator.clipboard.writeText(fullUrl);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent className="max-w-xl bg-[#0c1018]/95 border-white/10 text-white backdrop-blur-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.8)] sm:rounded-2xl p-6 overflow-hidden">
-        {/* Decorative Top Accent Light */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-violet-500 via-cyan-400 to-emerald-400" />
+      <DialogContent className="max-w-3xl sm:max-w-4xl bg-[#090b12]/95 border-white/[0.12] text-white backdrop-blur-2xl shadow-[0_25px_70px_-15px_rgba(0,0,0,0.9)] sm:rounded-2xl p-5 sm:p-6 overflow-hidden max-h-[92vh] flex flex-col">
+        {/* Subtle Top Gradient Accent */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 via-sky-400 to-emerald-400" />
 
-        <DialogHeader className="pt-2 text-left">
-          <div className="flex flex-wrap items-center gap-2 mb-3">
+        <DialogHeader className="pt-2 text-left shrink-0">
+          <div className="flex flex-wrap items-center gap-2 mb-2">
             <span className="text-2xl" role="img" aria-label={inst?.name || "Certificado"}>
               {inst?.icon || "📜"}
             </span>
             <Badge
               variant="outline"
-              className={inst?.badgeStyle || "bg-violet-500/10 text-violet-300 border-violet-500/20"}
+              className={inst?.badgeStyle || "border-white/10 text-gray-300"}
             >
               {certificate.institution}
             </Badge>
@@ -67,7 +73,7 @@ export function CertificateModal({
               {certificate.category}
             </Badge>
             {certificate.highlight && (
-              <Badge className="bg-amber-500/20 text-amber-300 border-amber-500/30 flex items-center gap-1 font-semibold">
+              <Badge className="bg-amber-500/15 text-amber-300 border-amber-500/30 flex items-center gap-1 font-semibold">
                 <Sparkles className="w-3 h-3 text-amber-400" />
                 Destaque
               </Badge>
@@ -77,61 +83,75 @@ export function CertificateModal({
           <DialogTitle className="text-xl sm:text-2xl font-bold tracking-tight text-white leading-snug">
             {certificate.name}
           </DialogTitle>
-          <DialogDescription className="text-gray-400 text-sm mt-1">
-            Emitido por {certificate.institution}
+          <DialogDescription className="text-gray-400 text-xs sm:text-sm mt-0.5">
+            {certificate.description ||
+              `Certificado emitido oficialmente por ${certificate.institution}`}
           </DialogDescription>
         </DialogHeader>
 
-        {/* Certificate Card Preview Style */}
-        <div className="relative mt-2 p-5 rounded-xl border border-white/10 bg-gradient-to-br from-white/[0.04] to-white/[0.01] overflow-hidden">
-          <div className="flex items-start gap-4">
-            <div className="p-3 rounded-xl bg-violet-500/10 border border-violet-500/20 shrink-0">
-              <Award className="w-8 h-8 text-violet-400" />
-            </div>
-            <div className="space-y-2 text-sm text-gray-300">
-              <p className="leading-relaxed">
-                {certificate.description ||
-                  "Certificação oficial comprovando domínio prático e conceitual nas tecnologias e metodologias correspondentes."}
-              </p>
-              {inst?.description && (
-                <div className="flex items-center gap-2 text-xs text-gray-400 pt-1">
-                  <BookOpen className="w-3.5 h-3.5 text-cyan-400" />
-                  <span>{inst.description}</span>
-                </div>
-              )}
-            </div>
-          </div>
+        {/* Embedded Interactive PDF Viewer */}
+        <div className="relative my-3 flex-1 min-h-[300px] sm:min-h-[420px] rounded-xl border border-white/10 bg-black/40 overflow-hidden shadow-inner flex flex-col">
+          <iframe
+            src={`${certificate.pdfUrl}#toolbar=0`}
+            title={certificate.name}
+            className="w-full h-full flex-1 rounded-xl bg-[#141721]"
+          />
 
-          {/* Tags */}
-          <div className="mt-4 pt-4 border-t border-white/10 flex flex-wrap gap-1.5">
-            {certificate.tags.map((tag) => (
-              <span
-                key={tag}
-                className="text-xs px-2.5 py-1 rounded-md bg-white/[0.06] text-gray-300 border border-white/5 font-mono"
-              >
-                #{tag}
-              </span>
-            ))}
+          {/* Fallback & Overlay helper */}
+          <div className="px-4 py-2 bg-[#0c0f18]/90 border-t border-white/[0.08] flex items-center justify-between text-xs text-gray-400">
+            <span className="truncate pr-2 font-mono text-[11px]">
+              {certificate.fileName}
+            </span>
+            <a
+              href={certificate.pdfUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-indigo-400 hover:text-indigo-300 font-medium inline-flex items-center gap-1 hover:underline"
+            >
+              <span>Abrir em tela cheia</span>
+              <Maximize2 className="w-3.5 h-3.5" />
+            </a>
           </div>
         </div>
 
-        {/* Actions */}
-        <div className="flex flex-col sm:flex-row gap-3 mt-4 pt-2">
+        {/* Tags */}
+        <div className="shrink-0 flex flex-wrap gap-1.5 pt-1">
+          {certificate.tags.map((tag) => (
+            <span
+              key={tag}
+              className="text-xs px-2.5 py-0.5 rounded-md bg-white/[0.05] text-gray-300 border border-white/5 font-mono"
+            >
+              #{tag}
+            </span>
+          ))}
+        </div>
+
+        {/* Actions Bar */}
+        <div className="flex flex-col sm:flex-row gap-2.5 mt-3 pt-3 border-t border-white/[0.08] shrink-0">
           <a
             href={certificate.pdfUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 flex items-center justify-center gap-2 h-9 px-4 rounded-lg bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-medium text-sm shadow-lg shadow-violet-600/25 transition-all duration-300 cursor-pointer"
+            className="flex-1 flex items-center justify-center gap-2 h-9 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-sm shadow-lg shadow-indigo-600/25 transition-all duration-200 cursor-pointer"
           >
-            <span>Visualizar PDF Oficial</span>
             <ExternalLink className="w-4 h-4" />
+            <span>Abrir PDF Diretamente</span>
+          </a>
+
+          <a
+            href={certificate.pdfUrl}
+            download={certificate.fileName}
+            className="flex items-center justify-center gap-2 h-9 px-4 rounded-xl border border-white/10 bg-white/[0.05] hover:bg-white/[0.1] text-gray-200 text-sm font-medium transition-colors"
+          >
+            <Download className="w-4 h-4 text-emerald-400" />
+            <span>Baixar Arquivo</span>
           </a>
 
           <Button
             type="button"
             variant="outline"
             onClick={handleCopyLink}
-            className="border-white/15 bg-white/5 hover:bg-white/10 text-gray-200 transition-colors"
+            className="border-white/10 bg-white/[0.05] hover:bg-white/[0.1] text-gray-200 h-9 rounded-xl"
           >
             {copied ? (
               <>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E1B4B" />
+      <stop offset="50%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#090D16" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047" />
+      <stop offset="50%" stop-color="#EAB308" />
+      <stop offset="100%" stop-color="#CA8A04" />
+    </linearGradient>
+    <linearGradient id="violetGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818CF8" />
+      <stop offset="100%" stop-color="#6366F1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Squircle Background -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#bgGrad)" stroke="#4338CA" stroke-width="2" />
+
+  <!-- Certificate Scroll Outline -->
+  <rect x="14" y="12" width="36" height="40" rx="6" fill="#1E293B" stroke="url(#violetGrad)" stroke-width="2" />
+
+  <!-- Certificate Lines -->
+  <line x1="20" y1="20" x2="36" y2="20" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" />
+  <line x1="20" y1="26" x2="44" y2="26" stroke="#64748B" stroke-width="2" stroke-linecap="round" />
+  <line x1="20" y1="32" x2="34" y2="32" stroke="#64748B" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Gold Seal / Medal -->
+  <circle cx="38" cy="38" r="8" fill="url(#goldGrad)" />
+  <path d="M38 34L39.2 36.8L42 37.1L39.9 39L40.5 41.8L38 40.3L35.5 41.8L36.1 39L34 37.1L36.8 36.8Z" fill="#713F12" />
+
+  <!-- Ribbon -->
+  <path d="M34 44L32 50L35 48L38 50L36 44" fill="#EAB308" opacity="0.9" />
+  <path d="M38 44L40 50L43 48L46 50L44 44" fill="#CA8A04" opacity="0.9" />
+</svg>

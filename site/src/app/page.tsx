@@ -17,6 +17,9 @@ import { InstitutionAccordion } from "@/components/institution-accordion";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import {
   Search,
   X,
@@ -92,65 +95,71 @@ export default function Home() {
   };
 
   return (
-    <div className="relative min-h-screen text-slate-100 selection:bg-violet-500/30 selection:text-white">
+    <div className="relative min-h-screen text-slate-100 selection:bg-indigo-500/30 selection:text-white">
       {/* Background Effect */}
       <BackgroundAurora />
 
       {/* Hero Section */}
       <HeroHeader />
 
+      <div className="mx-auto max-w-6xl px-4">
+        <Separator className="bg-white/[0.08]" />
+      </div>
+
       {/* Bento Grid Stats */}
       <BentoStats />
+
+      <div className="mx-auto max-w-6xl px-4">
+        <Separator className="bg-white/[0.08]" />
+      </div>
 
       {/* Main Exploration Section */}
       <section
         id="certificados-section"
         className="mx-auto max-w-6xl px-4 pt-12 pb-24"
       >
-        {/* Section Heading */}
+        {/* Section Heading & View Switcher */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
           <div>
-            <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-violet-400 mb-2">
+            <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-indigo-400 mb-2">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Explorador de Certificações</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
-              Histórico de Especializações
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+              Galeria de Credenciais Oficiais
             </h2>
             <p className="text-sm text-gray-400 mt-1">
-              Filtre por tecnologias, áreas de atuação ou veja a lista agrupada por instituição.
+              Clique em qualquer certificado para visualizar o documento PDF embutido sem sair da página.
             </p>
           </div>
 
-          {/* View mode toggle */}
-          <div className="flex items-center gap-1 p-1 rounded-xl bg-white/[0.04] border border-white/10 self-start md:self-auto">
-            <button
-              onClick={() => setViewMode("grid")}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer ${
-                viewMode === "grid"
-                  ? "bg-violet-600 text-white shadow-md shadow-violet-600/30"
-                  : "text-gray-400 hover:text-white"
-              }`}
-            >
-              <LayoutGrid className="w-3.5 h-3.5" />
-              <span>Grade de Cards</span>
-            </button>
-            <button
-              onClick={() => setViewMode("institution")}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer ${
-                viewMode === "institution"
-                  ? "bg-violet-600 text-white shadow-md shadow-violet-600/30"
-                  : "text-gray-400 hover:text-white"
-              }`}
-            >
-              <ListFilter className="w-3.5 h-3.5" />
-              <span>Por Instituição</span>
-            </button>
-          </div>
+          {/* View mode toggle with shadcn Tabs */}
+          <Tabs
+            value={viewMode}
+            onValueChange={(v) => setViewMode(v as "grid" | "institution")}
+            className="self-start md:self-auto"
+          >
+            <TabsList className="bg-[#0b0e17] border border-white/[0.08] p-1 rounded-xl h-auto">
+              <TabsTrigger
+                value="grid"
+                className="data-[state=active]:bg-indigo-600 data-[state=active]:text-white text-gray-400 rounded-lg text-xs py-1.5 px-3 flex items-center gap-1.5 transition-all"
+              >
+                <LayoutGrid className="w-3.5 h-3.5" />
+                <span>Grade de Cards</span>
+              </TabsTrigger>
+              <TabsTrigger
+                value="institution"
+                className="data-[state=active]:bg-indigo-600 data-[state=active]:text-white text-gray-400 rounded-lg text-xs py-1.5 px-3 flex items-center gap-1.5 transition-all"
+              >
+                <ListFilter className="w-3.5 h-3.5" />
+                <span>Por Instituição</span>
+              </TabsTrigger>
+            </TabsList>
+          </Tabs>
         </div>
 
         {/* Filter Controls Bar */}
-        <div className="rounded-2xl border border-white/10 bg-[#0c101a]/70 p-4 sm:p-5 backdrop-blur-xl mb-8 space-y-4">
+        <div className="rounded-2xl border border-white/[0.08] bg-[#090c14]/80 p-4 sm:p-5 backdrop-blur-xl mb-8 space-y-4 shadow-xl shadow-black/20">
           {/* Search bar & quick stats */}
           <div className="flex flex-col sm:flex-row gap-3 items-center justify-between">
             <div className="relative w-full sm:max-w-md">
@@ -160,7 +169,7 @@ export default function Home() {
                 placeholder="Buscar por Java, Angular, Spring, Harvard, SQL..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="pl-10 pr-9 bg-white/[0.04] border-white/10 text-white placeholder:text-gray-400 focus-visible:ring-violet-500 rounded-xl h-10 text-sm"
+                className="pl-10 pr-9 bg-white/[0.03] border-white/[0.08] text-white placeholder:text-gray-400 focus-visible:ring-indigo-500 rounded-xl h-10 text-sm"
               />
               {search && (
                 <button
@@ -184,7 +193,7 @@ export default function Home() {
                   variant="ghost"
                   size="sm"
                   onClick={clearFilters}
-                  className="text-xs text-violet-300 hover:text-violet-200 hover:bg-violet-500/10 h-8 px-2.5 cursor-pointer"
+                  className="text-xs text-indigo-300 hover:text-indigo-200 hover:bg-indigo-500/10 h-8 px-2.5 cursor-pointer"
                 >
                   Limpar filtros
                 </Button>
@@ -192,79 +201,83 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Category Filter Pills */}
-          <div className="flex items-center gap-1.5 overflow-x-auto pb-2 scrollbar-none pt-1">
-            {CATEGORIES.map((cat) => {
-              const isSelected = selectedCategory === cat;
-              const count =
-                cat === "Todas"
-                  ? ALL_CERTIFICATES.length
-                  : ALL_CERTIFICATES.filter((c) => c.category === cat).length;
+          {/* Category Filter Pills using shadcn Tabs */}
+          <div className="pt-1">
+            <div className="flex items-center gap-1.5 overflow-x-auto pb-2 scrollbar-none">
+              {CATEGORIES.map((cat) => {
+                const isSelected = selectedCategory === cat;
+                const count =
+                  cat === "Todas"
+                    ? ALL_CERTIFICATES.length
+                    : ALL_CERTIFICATES.filter((c) => c.category === cat).length;
 
-              return (
-                <button
-                  key={cat}
-                  onClick={() => setSelectedCategory(cat)}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium whitespace-nowrap transition-all duration-200 cursor-pointer ${
-                    isSelected
-                      ? "bg-violet-600 text-white shadow-md shadow-violet-600/30 scale-[1.02]"
-                      : "bg-white/[0.03] text-gray-400 hover:text-white hover:bg-white/[0.07] border border-white/5"
-                  }`}
-                >
-                  <span>{cat}</span>
-                  <span
-                    className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono ${
+                return (
+                  <button
+                    key={cat}
+                    onClick={() => setSelectedCategory(cat)}
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium whitespace-nowrap transition-all duration-200 cursor-pointer ${
                       isSelected
-                        ? "bg-white/20 text-white"
-                        : "bg-white/5 text-gray-400"
+                        ? "bg-indigo-600 text-white shadow-md shadow-indigo-600/30 scale-[1.02]"
+                        : "bg-white/[0.03] text-gray-400 hover:text-white hover:bg-white/[0.07] border border-white/5"
                     }`}
                   >
-                    {count}
-                  </span>
-                </button>
-              );
-            })}
+                    <span>{cat}</span>
+                    <span
+                      className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono ${
+                        isSelected
+                          ? "bg-white/20 text-white"
+                          : "bg-white/5 text-gray-400"
+                      }`}
+                    >
+                      {count}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
           {/* Institution Selector Pills */}
-          <div className="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs scrollbar-none pt-1 border-t border-white/[0.04]">
-            <span className="text-[11px] text-gray-400 uppercase font-semibold mr-1 shrink-0">
-              Instituição:
-            </span>
-            <button
-              onClick={() => setSelectedInstitution("all")}
-              className={`px-2.5 py-1 rounded-lg text-xs transition-colors shrink-0 cursor-pointer ${
-                selectedInstitution === "all"
-                  ? "bg-white/15 text-white font-medium"
-                  : "text-gray-400 hover:text-white"
-              }`}
-            >
-              Todas (9)
-            </button>
-            {Object.entries(INSTITUTIONS).map(([key, inst]) => {
-              const isSelected = selectedInstitution === key;
-              const count = ALL_CERTIFICATES.filter(
-                (c) => c.institutionKey === key
-              ).length;
+          <div className="pt-2 border-t border-white/[0.05]">
+            <div className="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs scrollbar-none">
+              <span className="text-[11px] text-gray-400 uppercase font-semibold mr-1 shrink-0">
+                Instituição:
+              </span>
+              <button
+                onClick={() => setSelectedInstitution("all")}
+                className={`px-2.5 py-1 rounded-lg text-xs transition-colors shrink-0 cursor-pointer ${
+                  selectedInstitution === "all"
+                    ? "bg-white/15 text-white font-medium"
+                    : "text-gray-400 hover:text-white"
+                }`}
+              >
+                Todas (9)
+              </button>
+              {Object.entries(INSTITUTIONS).map(([key, inst]) => {
+                const isSelected = selectedInstitution === key;
+                const count = ALL_CERTIFICATES.filter(
+                  (c) => c.institutionKey === key
+                ).length;
 
-              return (
-                <button
-                  key={key}
-                  onClick={() => setSelectedInstitution(key)}
-                  className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs transition-colors shrink-0 cursor-pointer ${
-                    isSelected
-                      ? "bg-violet-600/30 text-violet-200 border border-violet-500/40 font-medium"
-                      : "text-gray-400 hover:text-white"
-                  }`}
-                >
-                  <span>{inst.icon}</span>
-                  <span>{inst.shortName}</span>
-                  <span className="text-[10px] text-gray-400 font-mono">
-                    ({count})
-                  </span>
-                </button>
-              );
-            })}
+                return (
+                  <button
+                    key={key}
+                    onClick={() => setSelectedInstitution(key)}
+                    className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs transition-colors shrink-0 cursor-pointer ${
+                      isSelected
+                        ? "bg-indigo-600/30 text-indigo-200 border border-indigo-500/40 font-medium"
+                        : "text-gray-400 hover:text-white"
+                    }`}
+                  >
+                    <span>{inst.icon}</span>
+                    <span>{inst.shortName}</span>
+                    <span className="text-[10px] text-gray-400 font-mono">
+                      ({count})
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
 
@@ -276,7 +289,7 @@ export default function Home() {
               Nenhum certificado encontrado
             </h3>
             <p className="text-sm text-gray-400 max-w-sm mx-auto mb-6">
-              Não encontramos resultados para &quot;{search}&quot; com os filtros atuais.
+              Não encontramos resultados para &quot;{search}&quot; com os filtros selecionados.
             </p>
             <Button
               onClick={clearFilters}
@@ -304,7 +317,7 @@ export default function Home() {
         )}
       </section>
 
-      {/* Modal Dialog */}
+      {/* Interactive Modal Dialog with Embedded PDF Viewer */}
       <CertificateModal
         certificate={activeCertificate}
         isOpen={Boolean(activeCertificate)}
@@ -312,10 +325,10 @@ export default function Home() {
       />
 
       {/* Footer */}
-      <footer className="border-t border-white/[0.08] bg-[#07090f]/80 backdrop-blur-xl py-12">
+      <footer className="border-t border-white/[0.08] bg-[#05070c]/90 backdrop-blur-xl py-12">
         <div className="mx-auto max-w-6xl px-4 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-600/10 border border-violet-500/20 text-violet-400 font-bold">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-600/10 border border-indigo-500/20 text-indigo-400 font-bold">
               JV
             </div>
             <div>
@@ -369,7 +382,7 @@ export default function Home() {
           </div>
 
           <p className="text-xs text-gray-400">
-            © {new Date().getFullYear()} • Construído com Next.js & shadcn/ui
+            © {new Date().getFullYear()} • Construído com Next.js, shadcn/ui & Tailwind CSS
           </p>
         </div>
       </footer>

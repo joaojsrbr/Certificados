@@ -25,6 +25,7 @@ export interface CertificateItem {
   category: CategoryType;
   tags: string[];
   pdfUrl: string;
+  fileName: string;
   highlight?: boolean;
   description?: string;
 }
@@ -35,16 +36,14 @@ export interface InstitutionInfo {
   shortName: string;
   description: string;
   icon: string;
-  accentColor: string;
   badgeStyle: string;
   glowColor: string;
 }
 
-const GITHUB_BASE =
-  "https://github.com/joaojsrbr/Certificados/blob/master";
-
-function ghLink(path: string): string {
-  return `${GITHUB_BASE}/${encodeURIComponent(path).replace(/%2F/g, "/")}`;
+function pdfPath(subpath: string): string {
+  // Caminho local com basePath /Certificados para servir diretamente o arquivo PDF nativo
+  // sem redirecionar para a interface web do GitHub
+  return `/Certificados/pdfs/${subpath.replace(/\\/g, "/")}`;
 }
 
 export const INSTITUTIONS: Record<string, InstitutionInfo> = {
@@ -52,90 +51,81 @@ export const INSTITUTIONS: Record<string, InstitutionInfo> = {
     key: "dio",
     name: "Digital Innovation One (DIO)",
     shortName: "DIO / Santander",
-    description: "Santander Bootcamp - Formação Fullstack Developer, Java & Spring Boot",
+    description: "Santander Bootcamp - Formação Fullstack Developer, Java, Spring Boot e Angular",
     icon: "🚀",
-    accentColor: "from-violet-500/20 via-purple-500/10 to-indigo-500/20",
-    badgeStyle: "bg-violet-500/15 text-violet-300 border-violet-500/30",
-    glowColor: "rgba(139, 92, 246, 0.25)",
+    badgeStyle: "bg-indigo-500/10 text-indigo-300 border-indigo-500/25",
+    glowColor: "rgba(99, 102, 241, 0.25)",
   },
   descomplica: {
     key: "descomplica",
     name: "Faculdade Descomplica",
     shortName: "Descomplica",
-    description: "Cursos superiores em Arquitetura, Banco de Dados, Mobile e POO",
+    description: "Cursos superiores em Arquitetura, Banco de Dados, Mobile e Programação Orientada a Objetos",
     icon: "🎓",
-    accentColor: "from-blue-500/20 via-cyan-500/10 to-blue-500/20",
-    badgeStyle: "bg-blue-500/15 text-blue-300 border-blue-500/30",
-    glowColor: "rgba(59, 130, 246, 0.25)",
+    badgeStyle: "bg-sky-500/10 text-sky-300 border-sky-500/25",
+    glowColor: "rgba(14, 165, 233, 0.25)",
   },
   harvard: {
     key: "harvard",
     name: "CC50 - Harvard University",
     shortName: "Harvard CC50",
-    description: "Introdução à Ciência da Computação (CS50 de Harvard no Brasil)",
+    description: "Introdução à Ciência da Computação (Versão brasileira do CS50 de Harvard)",
     icon: "🏛️",
-    accentColor: "from-red-500/20 via-rose-500/10 to-orange-500/20",
-    badgeStyle: "bg-red-500/15 text-red-300 border-red-500/30",
-    glowColor: "rgba(239, 68, 68, 0.25)",
+    badgeStyle: "bg-rose-500/10 text-rose-300 border-rose-500/25",
+    glowColor: "rgba(244, 63, 94, 0.25)",
   },
   coursera: {
     key: "coursera",
     name: "Coursera & Google",
-    shortName: "Coursera",
-    description: "Google IT Support Professional Certificate",
+    shortName: "Coursera / Google",
+    description: "Certificado Profissional de Suporte em TI do Google",
     icon: "📘",
-    accentColor: "from-sky-500/20 via-blue-500/10 to-cyan-500/20",
-    badgeStyle: "bg-sky-500/15 text-sky-300 border-sky-500/30",
-    glowColor: "rgba(14, 165, 233, 0.25)",
+    badgeStyle: "bg-blue-500/10 text-blue-300 border-blue-500/25",
+    glowColor: "rgba(59, 130, 246, 0.25)",
   },
   balta: {
     key: "balta",
     name: "Balta.io",
     shortName: "Balta.io",
-    description: "Especialização em Dart, Flutter Apps e Fundamentos de C#",
+    description: "Cursos especializados em Dart, Flutter Mobile e Fundamentos de C#",
     icon: "💻",
-    accentColor: "from-emerald-500/20 via-teal-500/10 to-emerald-500/20",
-    badgeStyle: "bg-emerald-500/15 text-emerald-300 border-emerald-500/30",
+    badgeStyle: "bg-emerald-500/10 text-emerald-300 border-emerald-500/25",
     glowColor: "rgba(16, 185, 129, 0.25)",
   },
   cocacola: {
     key: "cocacola",
     name: "Instituto Coca-Cola",
     shortName: "Coca-Cola",
-    description: "Programa Coletivo Jovem & Formação Profissional",
+    description: "Programa Coletivo Jovem & Formação Corporativa",
     icon: "🥤",
-    accentColor: "from-rose-500/20 via-red-500/10 to-pink-500/20",
-    badgeStyle: "bg-rose-500/15 text-rose-300 border-rose-500/30",
-    glowColor: "rgba(244, 63, 94, 0.25)",
+    badgeStyle: "bg-red-500/10 text-red-300 border-red-500/25",
+    glowColor: "rgba(239, 68, 68, 0.25)",
   },
   ifes: {
     key: "ifes",
     name: "Instituto Federal do Espírito Santo (IFES)",
     shortName: "IFES",
-    description: "Simuladores de Redes, Infraestrutura e Formação Técnica",
+    description: "Simuladores de Redes, Infraestrutura e Formação Técnica Federal",
     icon: "🏫",
-    accentColor: "from-green-500/20 via-emerald-500/10 to-teal-500/20",
-    badgeStyle: "bg-green-500/15 text-green-300 border-green-500/30",
-    glowColor: "rgba(34, 197, 94, 0.25)",
+    badgeStyle: "bg-teal-500/10 text-teal-300 border-teal-500/25",
+    glowColor: "rgba(20, 184, 166, 0.25)",
   },
   qualifica: {
     key: "qualifica",
     name: "Qualifica ES",
     shortName: "Qualifica ES",
-    description: "Programa Estadual de Formação Técnica em TI",
+    description: "Programa Estadual de Qualificação Profissional em Tecnologia da Informação",
     icon: "📋",
-    accentColor: "from-amber-500/20 via-yellow-500/10 to-orange-500/20",
-    badgeStyle: "bg-amber-500/15 text-amber-300 border-amber-500/30",
+    badgeStyle: "bg-amber-500/10 text-amber-300 border-amber-500/25",
     glowColor: "rgba(245, 158, 11, 0.25)",
   },
   sebrae: {
     key: "sebrae",
     name: "Sebrae",
     shortName: "Sebrae",
-    description: "Gestão Empresarial, Liderança e Gestão de Pessoas",
+    description: "Gestão Empresarial, Liderança de Equipes e Gestão de Pessoas",
     icon: "📊",
-    accentColor: "from-cyan-500/20 via-sky-500/10 to-blue-500/20",
-    badgeStyle: "bg-cyan-500/15 text-cyan-300 border-cyan-500/30",
+    badgeStyle: "bg-cyan-500/10 text-cyan-300 border-cyan-500/25",
     glowColor: "rgba(6, 182, 212, 0.25)",
   },
 };
@@ -149,11 +139,10 @@ export const ALL_CERTIFICATES: CertificateItem[] = [
     institutionKey: "dio",
     category: "Fullstack",
     tags: ["Java", "Angular", "Spring Boot", "Fullstack", "PostgreSQL"],
-    pdfUrl: ghLink(
-      "DIO/Santander Bootcamp - Fullstack Developer/Santander Bootcamp - Fullstack Developer.pdf"
-    ),
+    pdfUrl: pdfPath("DIO/Santander Bootcamp - Fullstack Developer/Santander Bootcamp - Fullstack Developer.pdf"),
+    fileName: "Santander Bootcamp - Fullstack Developer.pdf",
     highlight: true,
-    description: "Formação completa cobrindo arquitetura de microsserviços, Java, Spring Boot, Angular e banco de dados relacional.",
+    description: "Formação integral intensiva cobrindo arquitetura de microsserviços, Java Enterprise, Spring Boot, Angular e bancos relacionais.",
   },
   {
     id: "dio-spring-cloud",
@@ -162,11 +151,10 @@ export const ALL_CERTIFICATES: CertificateItem[] = [
     institutionKey: "dio",
     category: "Backend",
     tags: ["Spring Cloud", "Microsserviços", "Spring Boot", "Java"],
-    pdfUrl: ghLink(
-      "DIO/Santander Bootcamp - Fullstack Developer/Construindo um projeto com arquitetura baseada em microsserviços usando Spring Cloud.pdf"
-    ),
+    pdfUrl: pdfPath("DIO/Santander Bootcamp - Fullstack Developer/Construindo um projeto com arquitetura baseada em microsserviços usando Spring Cloud.pdf"),
+    fileName: "Construindo um projeto com arquitetura baseada em microsserviços usando Spring Cloud.pdf",
     highlight: true,
-    description: "Arquitetura distribuída com Service Discovery (Eureka), Config Server, API Gateway e tolerância a falhas.",
+    description: "Implementação de arquitetura distribuída com Service Discovery (Eureka), Config Server, API Gateway e tolerância a falhas.",
   },
   {
     id: "dio-spring-rest-pessoas",
@@ -174,23 +162,21 @@ export const ALL_CERTIFICATES: CertificateItem[] = [
     institution: "Digital Innovation One (DIO)",
     institutionKey: "dio",
     category: "Backend",
-    tags: ["REST API", "Spring Boot", "Java", "Clean Code"],
-    pdfUrl: ghLink(
-      "DIO/Santander Bootcamp - Fullstack Developer/Desenvolvendo um sistema de gerenciamento de pessoas em API REST com Spring Boot.pdf"
-    ),
-    description: "Desenvolvimento de endpoints RESTful com validações, DTOs e arquitetura em camadas.",
+    tags: ["REST API", "Spring Boot", "Java", "Swagger"],
+    pdfUrl: pdfPath("DIO/Santander Bootcamp - Fullstack Developer/Desenvolvendo um sistema de gerenciamento de pessoas em API REST com Spring Boot.pdf"),
+    fileName: "Desenvolvendo um sistema de gerenciamento de pessoas em API REST com Spring Boot.pdf",
+    description: "Construção de API RESTful com arquitetura em camadas, validações avançadas de DTOs e testes.",
   },
   {
     id: "dio-spring-ponto",
-    name: "Sistema de Controle de Ponto com Spring Boot",
+    name: "Sistema de Controle de Ponto e Acesso com Spring Boot",
     institution: "Digital Innovation One (DIO)",
     institutionKey: "dio",
     category: "Backend",
     tags: ["Spring Boot", "Backend", "Java", "JPA"],
-    pdfUrl: ghLink(
-      "DIO/Santander Bootcamp - Fullstack Developer/Construindo um sistema de controle de ponto e acesso com Spring Boot.pdf"
-    ),
-    description: "Modelagem de regras de negócio complexas de jornada de trabalho e controle de acessos.",
+    pdfUrl: pdfPath("DIO/Santander Bootcamp - Fullstack Developer/Construindo um sistema de controle de ponto e acesso com Spring Boot.pdf"),
+    fileName: "Construindo um sistema de controle de ponto e acesso com Spring Boot.pdf",
+    description: "Modelagem de regras de negócio de jornada de trabalho corporativa, controle de acessos e persistência relacional.",
   },
   {
     id: "dio-java-avancado",
@@ -199,23 +185,21 @@ export const ALL_CERTIFICATES: CertificateItem[] = [
     institutionKey: "dio",
     category: "Backend",
     tags: ["Java", "Design Patterns", "Paradigmas", "Performance"],
-    pdfUrl: ghLink(
-      "DIO/Santander Bootcamp - Fullstack Developer/Desenvolvimento avançado em Java.pdf"
-    ),
+    pdfUrl: pdfPath("DIO/Santander Bootcamp - Fullstack Developer/Desenvolvimento avançado em Java.pdf"),
+    fileName: "Desenvolvimento avançado em Java.pdf",
     highlight: true,
-    description: "Programação funcional em Java, Threads, inferência de tipos e boas práticas enterprise.",
+    description: "Programação funcional em Java, Threads, inferência de tipos, Streams e boas práticas enterprise.",
   },
   {
     id: "dio-java-collections-streams",
-    name: "Collections e Streams API com Java",
+    name: "Implementando Collections e Streams com Java",
     institution: "Digital Innovation One (DIO)",
     institutionKey: "dio",
     category: "Backend",
-    tags: ["Java", "Collections", "Streams", "Lambdas"],
-    pdfUrl: ghLink(
-      "DIO/Santander Bootcamp - Fullstack Developer/Implementando Collections e Streams com Java.pdf"
-    ),
-    description: "Manipulação avançada de listas, conjuntos, mapas e pipeline funcional de dados com Streams.",
+    tags: ["Java", "Collections", "Streams API", "Lambdas"],
+    pdfUrl: pdfPath("DIO/Santander Bootcamp - Fullstack Developer/Implementando Collections e Streams com Java.pdf"),
+    fileName: "Implementando Collections e Streams com Java.pdf",
+    description: "Manipulação avançada de estruturas de dados, Lists, Sets, Maps e pipeline funcional com Streams.",
   },
   {
     id: "dio-java-basico",
@@ -224,10 +208,9 @@ export const ALL_CERTIFICATES: CertificateItem[] = [
     institutionKey: "dio",
     category: "Backend",
     tags: ["Java", "POO", "Sintaxe", "Fundamentos"],
-    pdfUrl: ghLink(
-      "DIO/Santander Bootcamp - Fullstack Developer/Desenvolvimento básico em Java.pdf"
-    ),
-    description: "Orientação a objetos, herança, polimorfismo, interfaces e encapsulamento em Java.",
+    pdfUrl: pdfPath("DIO/Santander Bootcamp - Fullstack Developer/Desenvolvimento básico em Java.pdf"),
+    fileName: "Desenvolvimento básico em Java.pdf",
+    description: "Conceitos fundamentais da linguagem Java, encapsulamento, herança e polimorfismo.",
   },
   {
     id: "dio-java-desafios",
@@ -236,10 +219,9 @@ export const ALL_CERTIFICATES: CertificateItem[] = [
     institutionKey: "dio",
     category: "Backend",
     tags: ["Java", "Algoritmos", "Lógica de Programação"],
-    pdfUrl: ghLink(
-      "DIO/Santander Bootcamp - Fullstack Developer/Resolvendo Desafios de Código em Java.pdf"
-    ),
-    description: "Resolução de problemas de algoritmos, complexidade de código e estruturas lógicas.",
+    pdfUrl: pdfPath("DIO/Santander Bootcamp - Fullstack Developer/Resolvendo Desafios de Código em Java.pdf"),
+    fileName: "Resolvendo Desafios de Código em Java.pdf",
+    description: "Resolução de desafios algorítmicos complexos e otimização de tempo e espaço computacional.",
   },
   {
     id: "dio-angular-avancado",
@@ -248,11 +230,10 @@ export const ALL_CERTIFICATES: CertificateItem[] = [
     institutionKey: "dio",
     category: "Frontend",
     tags: ["Angular", "TypeScript", "RxJS", "State Management"],
-    pdfUrl: ghLink(
-      "DIO/Santander Bootcamp - Fullstack Developer/Aplicações avançadas com Angular.pdf"
-    ),
+    pdfUrl: pdfPath("DIO/Santander Bootcamp - Fullstack Developer/Aplicações avançadas com Angular.pdf"),
+    fileName: "Aplicações avançadas com Angular.pdf",
     highlight: true,
-    description: "Arquitetura avançada de Single Page Applications, observables com RxJS e rotas complexas.",
+    description: "Arquitetura avançada de Single Page Applications, observables reativos com RxJS e rotas protegidas.",
   },
   {
     id: "dio-angular-tecnicas",
@@ -261,10 +242,9 @@ export const ALL_CERTIFICATES: CertificateItem[] = [
     institutionKey: "dio",
     category: "Frontend",
     tags: ["Angular", "TypeScript", "Componentes"],
-    pdfUrl: ghLink(
-      "DIO/Santander Bootcamp - Fullstack Developer/Técnicas avançadas em Angular 8.pdf"
-    ),
-    description: "Criação de componentes dinâmicos, custom directives, pipes e injeção de dependências.",
+    pdfUrl: pdfPath("DIO/Santander Bootcamp - Fullstack Developer/Técnicas avançadas em Angular 8.pdf"),
+    fileName: "Técnicas avançadas em Angular 8.pdf",
+    description: "Componentização dinâmica, injeção de dependências e custom directives no ecossistema Angular.",
   },
   {
     id: "dio-angular-intro",
@@ -273,23 +253,21 @@ export const ALL_CERTIFICATES: CertificateItem[] = [
     institutionKey: "dio",
     category: "Frontend",
     tags: ["Angular", "TypeScript", "Frontend SPA"],
-    pdfUrl: ghLink(
-      "DIO/Santander Bootcamp - Fullstack Developer/Introdução ao Angular 8.pdf"
-    ),
-    description: "Fundamentos do ecossistema Angular, data binding bidirecional e módulos.",
+    pdfUrl: pdfPath("DIO/Santander Bootcamp - Fullstack Developer/Introdução ao Angular 8.pdf"),
+    fileName: "Introdução ao Angular 8.pdf",
+    description: "Fundamentos do framework Angular, data binding bidirecional, diretivas e criação de módulos.",
   },
   {
     id: "dio-banco-jdbc-jpa",
-    name: "Banco de Dados com JDBC e JPA/Hibernate",
+    name: "Trabalhando com Banco de Dados utilizando JDBC e JPA",
     institution: "Digital Innovation One (DIO)",
     institutionKey: "dio",
     category: "Dados",
     tags: ["JPA", "Hibernate", "JDBC", "SQL", "Java"],
-    pdfUrl: ghLink(
-      "DIO/Santander Bootcamp - Fullstack Developer/Trabalhando com Banco de Dados utilizando JDBC e JPA.pdf"
-    ),
+    pdfUrl: pdfPath("DIO/Santander Bootcamp - Fullstack Developer/Trabalhando com Banco de Dados utilizando JDBC e JPA.pdf"),
+    fileName: "Trabalhando com Banco de Dados utilizando JDBC e JPA.pdf",
     highlight: true,
-    description: "Mapeamento objeto-relacional (ORM), persistência relacional e transações em Java.",
+    description: "Mapeamento Objeto-Relacional (ORM), persistência relacional, queries HQL/JPQL e transações.",
   },
   {
     id: "dio-banco-postgres",
@@ -298,22 +276,20 @@ export const ALL_CERTIFICATES: CertificateItem[] = [
     institutionKey: "dio",
     category: "Dados",
     tags: ["PostgreSQL", "SQL", "Modelagem", "Queries"],
-    pdfUrl: ghLink(
-      "DIO/Santander Bootcamp - Fullstack Developer/conceitos e melhores práticas com banco de dados PostgreSQL.pdf"
-    ),
-    description: "Otimização de consultas, índices, constraints e integridade relacional no PostgreSQL.",
+    pdfUrl: pdfPath("DIO/Santander Bootcamp - Fullstack Developer/conceitos e melhores práticas com banco de dados PostgreSQL.pdf"),
+    fileName: "conceitos e melhores práticas com banco de dados PostgreSQL.pdf",
+    description: "Modelagem relacional eficiente, criação de índices, integridade referencial e boas práticas com PostgreSQL.",
   },
   {
     id: "dio-web-html-css",
-    name: "Criação de Websites com HTML5 e CSS3",
+    name: "Introdução à Criação de Websites com HTML5 e CSS3",
     institution: "Digital Innovation One (DIO)",
     institutionKey: "dio",
     category: "Frontend",
-    tags: ["HTML5", "CSS3", "Semântica", "Design Responsivo"],
-    pdfUrl: ghLink(
-      "DIO/Santander Bootcamp - Fullstack Developer/Introdução a criação de websites com HTML5 E CSS3.pdf"
-    ),
-    description: "Estruturação semântica, estilização moderna com Flexbox e responsividade.",
+    tags: ["HTML5", "CSS3", "Design Responsivo", "Semântica"],
+    pdfUrl: pdfPath("DIO/Santander Bootcamp - Fullstack Developer/Introdução a criação de websites com HTML5 E CSS3.pdf"),
+    fileName: "Introdução a criação de websites com HTML5 E CSS3.pdf",
+    description: "Estruturação semântica, responsividade com Flexbox, estilização moderna e acessibilidade na web.",
   },
   {
     id: "dio-git-github",
@@ -322,10 +298,9 @@ export const ALL_CERTIFICATES: CertificateItem[] = [
     institutionKey: "dio",
     category: "Fundamentos",
     tags: ["Git", "GitHub", "Versionamento", "DevOps"],
-    pdfUrl: ghLink(
-      "DIO/Santander Bootcamp - Fullstack Developer/Introdução ao Git e ao GitHub.pdf"
-    ),
-    description: "Controle de versão distribuído, branches, pull requests e colaboração no GitHub.",
+    pdfUrl: pdfPath("DIO/Santander Bootcamp - Fullstack Developer/Introdução ao Git e ao GitHub.pdf"),
+    fileName: "Introdução ao Git e ao GitHub.pdf",
+    description: "Controle de versão distribuído, fluxo de branches, pull requests e boas práticas de colaboração.",
   },
   {
     id: "dio-logica-programacao",
@@ -334,23 +309,21 @@ export const ALL_CERTIFICATES: CertificateItem[] = [
     institutionKey: "dio",
     category: "Fundamentos",
     tags: ["Lógica", "Algoritmos", "Fluxogramas"],
-    pdfUrl: ghLink(
-      "DIO/Santander Bootcamp - Fullstack Developer/Lógica de programação essencial.pdf"
-    ),
-    description: "Estruturas de controle de fluxo, laços de repetição e resolução algorítmica de problemas.",
+    pdfUrl: pdfPath("DIO/Santander Bootcamp - Fullstack Developer/Lógica de programação essencial.pdf"),
+    fileName: "Lógica de programação essencial.pdf",
+    description: "Algoritmos essenciais, estruturas de decisão, repetição e estruturação do raciocínio lógico.",
   },
   {
     id: "dio-estrutura-dados",
-    name: "Estrutura de Dados e Algoritmos",
+    name: "Aprenda o que são Estrutura de Dados e Algoritmos",
     institution: "Digital Innovation One (DIO)",
     institutionKey: "dio",
     category: "Fundamentos",
     tags: ["Estrutura de Dados", "Pilhas", "Filas", "Complexidade"],
-    pdfUrl: ghLink(
-      "DIO/Santander Bootcamp - Fullstack Developer/Aprenda o que são Estrutura de Dados e Algoritmos.pdf"
-    ),
+    pdfUrl: pdfPath("DIO/Santander Bootcamp - Fullstack Developer/Aprenda o que são Estrutura de Dados e Algoritmos.pdf"),
+    fileName: "Aprenda o que são Estrutura de Dados e Algoritmos.pdf",
     highlight: true,
-    description: "Alocação de memória, pilhas, filas, nós encadeados e análise de algoritmos.",
+    description: "Alocação de memória, encadeamento, pilhas, filas e análise de complexidade assintótica.",
   },
   {
     id: "dio-onboarding-1",
@@ -359,9 +332,8 @@ export const ALL_CERTIFICATES: CertificateItem[] = [
     institutionKey: "dio",
     category: "Fundamentos",
     tags: ["Carreira Tech", "Comunidade"],
-    pdfUrl: ghLink(
-      "DIO/Santander Bootcamp - Fullstack Developer/Bem-vindo à DIO.pdf"
-    ),
+    pdfUrl: pdfPath("DIO/Santander Bootcamp - Fullstack Developer/Bem-vindo à DIO.pdf"),
+    fileName: "Bem-vindo à DIO.pdf",
     description: "Imersão no ecossistema e trilha de desenvolvimento contínuo da DIO.",
   },
   {
@@ -371,10 +343,9 @@ export const ALL_CERTIFICATES: CertificateItem[] = [
     institutionKey: "dio",
     category: "Fundamentos",
     tags: ["Santander", "Bootcamp", "Fullstack"],
-    pdfUrl: ghLink(
-      "DIO/Santander Bootcamp - Fullstack Developer/Boas-vindas ao Bootcamp Santander Fullstack.pdf"
-    ),
-    description: "Abertura oficial e alinhamento de metas da trilha intensiva do Santander.",
+    pdfUrl: pdfPath("DIO/Santander Bootcamp - Fullstack Developer/Boas-vindas ao Bootcamp Santander Fullstack.pdf"),
+    fileName: "Boas-vindas ao Bootcamp Santander Fullstack.pdf",
+    description: "Abertura oficial e alinhamento do programa de alta performance Santander Fullstack.",
   },
 
   // --- Descomplica (6) ---
@@ -385,9 +356,10 @@ export const ALL_CERTIFICATES: CertificateItem[] = [
     institutionKey: "descomplica",
     category: "Dados",
     tags: ["Banco de Dados", "SQL", "Modelagem ER", "DBA"],
-    pdfUrl: ghLink("Descomplica/DB Developer.pdf"),
+    pdfUrl: pdfPath("Descomplica/DB Developer.pdf"),
+    fileName: "DB Developer.pdf",
     highlight: true,
-    description: "Formação superior voltada para design de esquemas, normalização e otimização de bancos relacionais.",
+    description: "Especialização superior em modelagem de esquemas relacionais, normalização de dados e otimização de consultas SQL.",
   },
   {
     id: "descomplica-mobile-dev",
@@ -396,9 +368,10 @@ export const ALL_CERTIFICATES: CertificateItem[] = [
     institutionKey: "descomplica",
     category: "Mobile",
     tags: ["Mobile", "Android", "UI Mobile", "APIs"],
-    pdfUrl: ghLink("Descomplica/Mobile Developer.pdf"),
+    pdfUrl: pdfPath("Descomplica/Mobile Developer.pdf"),
+    fileName: "Mobile Developer.pdf",
     highlight: true,
-    description: "Desenvolvimento de aplicativos para dispositivos móveis, ciclo de vida e integração com serviços.",
+    description: "Desenvolvimento de aplicações para smartphones, ciclo de vida de apps e consumo de APIs REST.",
   },
   {
     id: "descomplica-oop-dev",
@@ -407,9 +380,10 @@ export const ALL_CERTIFICATES: CertificateItem[] = [
     institutionKey: "descomplica",
     category: "Backend",
     tags: ["POO", "Arquitetura de Software", "Clean Code", "SOLID"],
-    pdfUrl: ghLink("Descomplica/Object-Oriented Developer.pdf"),
+    pdfUrl: pdfPath("Descomplica/Object-Oriented Developer.pdf"),
+    fileName: "Object-Oriented Developer.pdf",
     highlight: true,
-    description: "Aprofundamento conceitual e prático em princípios de orientação a objetos e boas práticas de código.",
+    description: "Arquitetura orientada a objetos de nível enterprise, princípios SOLID e padrões de design limpos.",
   },
   {
     id: "descomplica-smart-data",
@@ -418,9 +392,10 @@ export const ALL_CERTIFICATES: CertificateItem[] = [
     institutionKey: "descomplica",
     category: "Fundamentos",
     tags: ["Estrutura de Dados", "Grafos", "Árvores", "Performance"],
-    pdfUrl: ghLink("Descomplica/Smart Data Structures.pdf"),
+    pdfUrl: pdfPath("Descomplica/Smart Data Structures.pdf"),
+    fileName: "Smart Data Structures.pdf",
     highlight: true,
-    description: "Estruturas de dados inteligentes, tabelas hash, árvores binárias e algoritmos eficientes.",
+    description: "Estruturas de dados inteligentes, algoritmos de busca e ordenação, grafos e árvores binárias.",
   },
   {
     id: "descomplica-arq-comp",
@@ -429,8 +404,9 @@ export const ALL_CERTIFICATES: CertificateItem[] = [
     institutionKey: "descomplica",
     category: "Fundamentos",
     tags: ["Hardware", "CPU", "Memória", "Sistemas Operacionais"],
-    pdfUrl: ghLink("Descomplica/ARQUITETURA E ORGANIZAÇÃO DE.pdf"),
-    description: "Funcionamento interno de processadores, barramentos, registradores e hierarquia de memória.",
+    pdfUrl: pdfPath("Descomplica/ARQUITETURA E ORGANIZAÇÃO DE.pdf"),
+    fileName: "ARQUITETURA E ORGANIZAÇÃO DE.pdf",
+    description: "Estrutura interna dos computadores, unidades lógicas e aritméticas, pipeline e hierarquia de memória.",
   },
   {
     id: "descomplica-participacao",
@@ -439,10 +415,9 @@ export const ALL_CERTIFICATES: CertificateItem[] = [
     institutionKey: "descomplica",
     category: "Gestão & TI",
     tags: ["Acadêmico", "Extensão", "Tecnologia"],
-    pdfUrl: ghLink(
-      "Descomplica/Certificado de Participação - João Vitor Da Silva Rocha.pdf"
-    ),
-    description: "Participação em seminários e eventos acadêmicos da faculdade de tecnologia.",
+    pdfUrl: pdfPath("Descomplica/Certificado de Participação - João Vitor Da Silva Rocha.pdf"),
+    fileName: "Certificado de Participação - João Vitor Da Silva Rocha.pdf",
+    description: "Participação em jornadas de qualificação e extensão tecnológica universitária.",
   },
 
   // --- Harvard CC50 (1) ---
@@ -452,12 +427,11 @@ export const ALL_CERTIFICATES: CertificateItem[] = [
     institution: "CC50 - Harvard University",
     institutionKey: "harvard",
     category: "Fundamentos",
-    tags: ["Harvard", "C", "Python", "Algoritmos", "Ciência da Computação"],
-    pdfUrl: ghLink(
-      "CC50 Introdução à Ciência da Computação/course-84414-frsxc.pdf"
-    ),
+    tags: ["Harvard", "C", "Python", "Algoritmos", "CS50"],
+    pdfUrl: pdfPath("CC50 Introdução à Ciência da Computação/course-84414-frsxc.pdf"),
+    fileName: "course-84414-frsxc.pdf",
     highlight: true,
-    description: "Versão brasileira do lendário CS50 da Universidade de Harvard: pensamento computacional, algoritmos em C e abstrações de dados.",
+    description: "Versão oficial brasileira do CS50 da Harvard University: rigor conceitual em C, gerenciamento de memória, algoritmos e ciência da computação pura.",
   },
 
   // --- Coursera Google (1) ---
@@ -468,9 +442,10 @@ export const ALL_CERTIFICATES: CertificateItem[] = [
     institutionKey: "coursera",
     category: "Gestão & TI",
     tags: ["Google", "TI", "Suporte", "Hardware", "Troubleshooting"],
-    pdfUrl: ghLink("Coursera/Coursera Y5EQEW7YR2PM.pdf"),
+    pdfUrl: pdfPath("Coursera/Coursera Y5EQEW7YR2PM.pdf"),
+    fileName: "Coursera Y5EQEW7YR2PM.pdf",
     highlight: true,
-    description: "Certificação profissional desenvolvida pelo Google abordando resolução de problemas, redes, sistemas operacionais e atendimento ao cliente.",
+    description: "Certificado profissional emitido pelo Google através do Coursera: resolução de problemas, redes, sistemas operacionais e infraestrutura.",
   },
 
   // --- Balta.io (3) ---
@@ -481,9 +456,10 @@ export const ALL_CERTIFICATES: CertificateItem[] = [
     institutionKey: "balta",
     category: "Mobile",
     tags: ["Flutter", "Dart", "Mobile", "Cross-Platform"],
-    pdfUrl: ghLink("Baita.io/Flutter/Criando seu primeiro App com Flutter.pdf"),
+    pdfUrl: pdfPath("Baita.io/Flutter/Criando seu primeiro App com Flutter.pdf"),
+    fileName: "Criando seu primeiro App com Flutter.pdf",
     highlight: true,
-    description: "Construção de aplicações multiplataforma fluidas e reativas com Flutter e widgets modernos.",
+    description: "Construção de aplicações multiplataforma reativas com o framework Flutter e ecossistema Dart.",
   },
   {
     id: "balta-dart-logica",
@@ -492,8 +468,9 @@ export const ALL_CERTIFICATES: CertificateItem[] = [
     institutionKey: "balta",
     category: "Mobile",
     tags: ["Dart", "Lógica", "Sintaxe Moderna"],
-    pdfUrl: ghLink("Baita.io/Dart/Lógica de programação com Dart - balta.io.pdf"),
-    description: "Fundamentos essenciais da linguagem Dart para suporte a aplicações Flutter modernas.",
+    pdfUrl: pdfPath("Baita.io/Dart/Lógica de programação com Dart - balta.io.pdf"),
+    fileName: "Lógica de programação com Dart - balta.io.pdf",
+    description: "Sintaxe moderna da linguagem Dart, tipagem estática e programação funcional para Flutter.",
   },
   {
     id: "balta-csharp-fundamentos",
@@ -502,8 +479,9 @@ export const ALL_CERTIFICATES: CertificateItem[] = [
     institutionKey: "balta",
     category: "Backend",
     tags: ["C#", ".NET", "POO", "Backend"],
-    pdfUrl: ghLink("Baita.io/C Sharp/fundamentos do C Sharp.pdf"),
-    description: "Estruturas do C#, tipagem estática forte, classes e paradigmas da plataforma .NET.",
+    pdfUrl: pdfPath("Baita.io/C Sharp/fundamentos do C Sharp.pdf"),
+    fileName: "fundamentos do C Sharp.pdf",
+    description: "Bases da plataforma Microsoft .NET, orientação a objetos com C# e tipos de referência.",
   },
 
   // --- Coca-Cola (2) ---
@@ -513,9 +491,10 @@ export const ALL_CERTIFICATES: CertificateItem[] = [
     institution: "Instituto Coca-Cola",
     institutionKey: "cocacola",
     category: "Gestão & TI",
-    tags: ["Desenvolvimento Profissional", "Planejamento", "Comunicação"],
-    pdfUrl: ghLink("Coca-Cola/Coca-Cola.pdf"),
-    description: "Capacitação para o mercado de trabalho com ênfase em comunicação assertiva e metas profissionais.",
+    tags: ["Comunicação", "Carreira", "Planejamento"],
+    pdfUrl: pdfPath("Coca-Cola/Coca-Cola.pdf"),
+    fileName: "Coca-Cola.pdf",
+    description: "Desenvolvimento de competências para inserção no mercado corporativo e comunicação.",
   },
   {
     id: "cocacola-conclusao",
@@ -523,11 +502,10 @@ export const ALL_CERTIFICATES: CertificateItem[] = [
     institution: "Instituto Coca-Cola",
     institutionKey: "cocacola",
     category: "Gestão & TI",
-    tags: ["Carreira", "Liderança", "Soft Skills"],
-    pdfUrl: ghLink(
-      "Coca-Cola/Certificado de conclusão - João Vitor da Silva Rocha.pdf"
-    ),
-    description: "Conclusão com mérito de capacitação socioemocional e formação corporativa.",
+    tags: ["Liderança", "Carreira", "Soft Skills"],
+    pdfUrl: pdfPath("Coca-Cola/Certificado de conclusão - João Vitor da Silva Rocha.pdf"),
+    fileName: "Certificado de conclusão - João Vitor da Silva Rocha.pdf",
+    description: "Conclusão com mérito de capacitação socioemocional e postura profissional corporativa.",
   },
 
   // --- IFES (2) ---
@@ -538,19 +516,21 @@ export const ALL_CERTIFICATES: CertificateItem[] = [
     institutionKey: "ifes",
     category: "Fundamentos",
     tags: ["Redes", "Cisco", "Topologia", "Infraestrutura"],
-    pdfUrl: ghLink("Ifes/INTRODUÇÃO AOS SIMULADORES DE REDES.pdf"),
+    pdfUrl: pdfPath("Ifes/INTRODUÇÃO AOS SIMULADORES DE REDES.pdf"),
+    fileName: "INTRODUÇÃO AOS SIMULADORES DE REDES.pdf",
     highlight: true,
-    description: "Simulação de topologias de rede, roteamento de pacotes, endereçamento IP e diagnóstico de conexões.",
+    description: "Configuração de topologias de rede, roteamento de pacotes, endereçamento IP e simulação com Cisco Packet Tracer.",
   },
   {
     id: "ifes-certificado-geral",
-    name: "Certificado de Capacitação Técnica IFES",
+    name: "Certificado de Extensão Técnica IFES",
     institution: "Instituto Federal do Espírito Santo (IFES)",
     institutionKey: "ifes",
     category: "Gestão & TI",
     tags: ["IFES", "Tecnologia", "Extensão"],
-    pdfUrl: ghLink("Ifes/Certificado ifes.pdf"),
-    description: "Participação e conclusão de módulos de qualificação técnica da instituição federal.",
+    pdfUrl: pdfPath("Ifes/Certificado ifes.pdf"),
+    fileName: "Certificado ifes.pdf",
+    description: "Qualificação técnica e extensão comunitária emitida pelo Instituto Federal do Espírito Santo.",
   },
 
   // --- Qualifica ES (1) ---
@@ -561,9 +541,10 @@ export const ALL_CERTIFICATES: CertificateItem[] = [
     institutionKey: "qualifica",
     category: "Gestão & TI",
     tags: ["Suporte Técnico", "Redes", "TI", "Manutenção"],
-    pdfUrl: ghLink("qualifica es/Assistente de tecnologia da informação.pdf"),
+    pdfUrl: pdfPath("qualifica es/Assistente de tecnologia da informação.pdf"),
+    fileName: "Assistente de tecnologia da informação.pdf",
     highlight: true,
-    description: "Qualificação governamental em manutenção preventiva, suporte a usuários, redes locais e sistemas corporativos.",
+    description: "Qualificação profissional estadual em manutenção de computadores, redes locais, suporte ao usuário e sistemas operacionais.",
   },
 
   // --- Sebrae (1) ---
@@ -574,8 +555,9 @@ export const ALL_CERTIFICATES: CertificateItem[] = [
     institutionKey: "sebrae",
     category: "Gestão & TI",
     tags: ["Liderança", "Gestão de Pessoas", "Soft Skills", "Trabalho em Equipe"],
-    pdfUrl: ghLink("Sebrae/Gestão de pessoas.pdf"),
-    description: "Liderança participativa, inteligência emocional e gestão de conflitos no ambiente corporativo.",
+    pdfUrl: pdfPath("Sebrae/Gestão de pessoas.pdf"),
+    fileName: "Gestão de pessoas.pdf",
+    description: "Práticas modernas de liderança participativa, gestão de conflitos, motivação e trabalho em equipe.",
   },
 ];
 
@@ -591,13 +573,13 @@ export const CATEGORIES: CategoryType[] = [
 ];
 
 export const TECH_BADGES = [
-  { name: "Java", color: "bg-amber-500/15 text-amber-300 border-amber-500/30" },
-  { name: "Spring Boot", color: "bg-emerald-500/15 text-emerald-300 border-emerald-500/30" },
-  { name: "Angular", color: "bg-red-500/15 text-red-300 border-red-500/30" },
-  { name: "TypeScript", color: "bg-blue-500/15 text-blue-300 border-blue-500/30" },
-  { name: "Flutter", color: "bg-sky-500/15 text-sky-300 border-sky-500/30" },
-  { name: "Dart", color: "bg-teal-500/15 text-teal-300 border-teal-500/30" },
-  { name: "PostgreSQL", color: "bg-indigo-500/15 text-indigo-300 border-indigo-500/30" },
-  { name: "C#", color: "bg-purple-500/15 text-purple-300 border-purple-500/30" },
-  { name: "Git & GitHub", color: "bg-orange-500/15 text-orange-300 border-orange-500/30" },
+  { name: "Java", color: "bg-amber-500/10 text-amber-300 border-amber-500/25" },
+  { name: "Spring Boot", color: "bg-emerald-500/10 text-emerald-300 border-emerald-500/25" },
+  { name: "Angular", color: "bg-rose-500/10 text-rose-300 border-rose-500/25" },
+  { name: "TypeScript", color: "bg-sky-500/10 text-sky-300 border-sky-500/25" },
+  { name: "Flutter", color: "bg-cyan-500/10 text-cyan-300 border-cyan-500/25" },
+  { name: "Dart", color: "bg-teal-500/10 text-teal-300 border-teal-500/25" },
+  { name: "PostgreSQL", color: "bg-indigo-500/10 text-indigo-300 border-indigo-500/25" },
+  { name: "C#", color: "bg-purple-500/10 text-purple-300 border-purple-500/25" },
+  { name: "Git & GitHub", color: "bg-orange-500/10 text-orange-300 border-orange-500/25" },
 ];
