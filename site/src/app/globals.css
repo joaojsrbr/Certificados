@@ -120,11 +120,22 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  *::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
   }
   body {
     @apply bg-background text-foreground;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
   }
   html {
     @apply font-sans;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
   }
 }

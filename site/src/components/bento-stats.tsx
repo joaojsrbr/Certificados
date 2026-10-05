@@ -6,8 +6,6 @@ import {
   Layers,
   Sparkles,
   CheckCircle2,
-  Cpu,
-  BookOpen,
   Building,
 } from "lucide-react";
 import { ALL_CERTIFICATES, INSTITUTIONS } from "@/lib/certificates";
@@ -26,162 +24,112 @@ export function BentoStats() {
   };
 
   return (
-    <section className="mx-auto max-w-6xl px-4 py-8">
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {/* Card 1: Total Certificados (Bento Large) */}
-        <div className="relative md:col-span-1 lg:col-span-1 rounded-2xl border border-white/10 bg-[#0c101a]/70 p-6 backdrop-blur-xl flex flex-col justify-between overflow-hidden group hover:border-violet-500/40 transition-all duration-300">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-violet-600/15 rounded-full blur-2xl group-hover:bg-violet-600/25 transition-colors" />
-
-          <div>
-            <div className="flex items-center justify-between mb-4">
-              <div className="p-3 rounded-xl bg-violet-500/10 border border-violet-500/20 text-violet-400">
-                <Award className="w-6 h-6" />
-              </div>
-              <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 flex items-center gap-1">
-                <CheckCircle2 className="w-3 h-3" /> Verificados
-              </span>
+    <section className="w-full px-4 sm:px-8 xl:px-12 py-6">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-3.5">
+        {/* Metric 1 */}
+        <div className="rounded-2xl border border-white/[0.08] bg-[#090c14]/80 p-5 backdrop-blur-xl flex items-center justify-between gap-4">
+          <div className="flex items-center gap-3.5">
+            <div className="p-3 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 shrink-0">
+              <Award className="w-6 h-6" />
             </div>
-
-            <div className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
-              {totalCerts}
-            </div>
-            <h2 className="text-sm font-semibold text-gray-300 mt-1">
-              Certificados Profissionais
-            </h2>
-            <p className="text-xs text-gray-400 mt-2 leading-relaxed">
-              Todos armazenados em PDF de alta resolução e com hash no GitHub.
-            </p>
-          </div>
-
-          <div className="mt-6 pt-4 border-t border-white/[0.08] flex items-center justify-between text-xs text-gray-400">
-            <span>Repositório Oficial</span>
-            <span className="text-violet-300 font-mono">100% Auditável</span>
-          </div>
-        </div>
-
-        {/* Card 2: Formação de Destaque (Fullstack & Descomplica) */}
-        <div className="relative md:col-span-2 lg:col-span-2 rounded-2xl border border-white/10 bg-[#0c101a]/70 p-6 backdrop-blur-xl flex flex-col justify-between overflow-hidden group hover:border-cyan-500/40 transition-all duration-300">
-          <div className="absolute top-0 right-0 w-44 h-44 bg-cyan-600/10 rounded-full blur-3xl group-hover:bg-cyan-600/20 transition-colors" />
-
-          <div>
-            <div className="flex items-center justify-between mb-4">
+            <div>
               <div className="flex items-center gap-2">
-                <div className="p-2.5 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400">
-                  <GraduationCap className="w-5 h-5" />
-                </div>
-                <span className="text-xs font-medium text-cyan-300">
-                  Formações Principais
+                <span className="text-3xl font-black text-white tracking-tight">
+                  {totalCerts}
+                </span>
+                <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">
+                  100% PDFs Nativos
                 </span>
               </div>
-              <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-white/[0.06] text-gray-300 border border-white/10">
-                Santander + Descomplica
-              </span>
+              <p className="text-xs text-gray-400 mt-0.5">
+                Certificados Profissionais Verificados
+              </p>
             </div>
-
-            <h2 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-200 transition-colors">
-              Bootcamp Fullstack & Especializações em TI
-            </h2>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
-              <div className="p-3 rounded-xl bg-white/[0.03] border border-white/5">
-                <div className="flex items-center gap-2 text-violet-300 font-semibold text-xs mb-1">
-                  <Sparkles className="w-3.5 h-3.5" /> Santander Bootcamp
-                </div>
-                <p className="text-xs text-gray-400">
-                  Java Avançado, Spring Cloud, Angular, Microservices & PostgreSQL.
-                </p>
-              </div>
-
-              <div className="p-3 rounded-xl bg-white/[0.03] border border-white/5">
-                <div className="flex items-center gap-2 text-blue-300 font-semibold text-xs mb-1">
-                  <Sparkles className="w-3.5 h-3.5" /> Faculdade Descomplica
-                </div>
-                <p className="text-xs text-gray-400">
-                  DB Developer, Mobile Developer, POO & Smart Data Structures.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-4 pt-3 border-t border-white/[0.08] flex items-center justify-between text-xs text-gray-400">
-            <span>Destaque Acadêmico</span>
-            <span className="text-cyan-300 font-mono">25+ Certificados DIO & Descomplica</span>
           </div>
         </div>
 
-        {/* Card 3: Instituições Reconhecidas */}
-        <div className="relative md:col-span-1 lg:col-span-1 rounded-2xl border border-white/10 bg-[#0c101a]/70 p-6 backdrop-blur-xl flex flex-col justify-between overflow-hidden group hover:border-emerald-500/40 transition-all duration-300">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-600/15 rounded-full blur-2xl group-hover:bg-emerald-600/25 transition-colors" />
-
-          <div>
-            <div className="flex items-center justify-between mb-4">
-              <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
-                <Building className="w-6 h-6" />
+        {/* Metric 2 */}
+        <div className="rounded-2xl border border-white/[0.08] bg-[#090c14]/80 p-5 backdrop-blur-xl flex items-center justify-between gap-4">
+          <div className="flex items-center gap-3.5">
+            <div className="p-3 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 shrink-0">
+              <GraduationCap className="w-6 h-6" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-3xl font-black text-white tracking-tight">
+                  19
+                </span>
+                <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">
+                  Santander Bootcamp
+                </span>
               </div>
-              <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
-                Nacional & Global
-              </span>
+              <p className="text-xs text-gray-400 mt-0.5">
+                Fullstack Java, Spring Cloud & Angular
+              </p>
             </div>
-
-            <div className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
-              {totalInstitutions}
-            </div>
-            <h2 className="text-sm font-semibold text-gray-300 mt-1">
-              Instituições Parceiras
-            </h2>
-            <p className="text-xs text-gray-400 mt-2 leading-relaxed">
-              Harvard (CC50), Google (Coursera), DIO, Balta.io, IFES, Sebrae e mais.
-            </p>
-          </div>
-
-          <div className="mt-6 pt-4 border-t border-white/[0.08] flex items-center justify-between text-xs text-gray-400">
-            <span>Credenciais</span>
-            <span className="text-emerald-300 font-mono">100% Concluídos</span>
           </div>
         </div>
 
-        {/* Card 4: Distribuição por Especialidade (Full Width Bento Bar) */}
-        <div className="relative md:col-span-3 lg:col-span-4 rounded-2xl border border-white/10 bg-[#0c101a]/70 p-6 backdrop-blur-xl overflow-hidden group hover:border-white/20 transition-all duration-300">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
-            <div className="flex items-center gap-2">
-              <div className="p-2 rounded-lg bg-white/[0.06] text-white">
-                <Layers className="w-4 h-4" />
-              </div>
-              <h2 className="text-sm font-bold text-white tracking-wide">
-                Distribuição por Domínio de Conhecimento
-              </h2>
+        {/* Metric 3 */}
+        <div className="rounded-2xl border border-white/[0.08] bg-[#090c14]/80 p-5 backdrop-blur-xl flex items-center justify-between gap-4">
+          <div className="flex items-center gap-3.5">
+            <div className="p-3 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 shrink-0">
+              <Building className="w-6 h-6" />
             </div>
-            <span className="text-xs text-gray-400">
-              Mapeamento de 36 certificados por foco técnico
-            </span>
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-3xl font-black text-white tracking-tight">
+                  {totalInstitutions}
+                </span>
+                <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/30">
+                  Harvard, Google, DIO
+                </span>
+              </div>
+              <p className="text-xs text-gray-400 mt-0.5">
+                Instituições de Ensino Reconhecidas
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Metric 4 */}
+        <div className="rounded-2xl border border-white/[0.08] bg-[#090c14]/80 p-5 backdrop-blur-xl flex items-center justify-between gap-4">
+          <div className="flex items-center gap-3.5">
+            <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 shrink-0">
+              <Sparkles className="w-6 h-6" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-3xl font-black text-white tracking-tight">
+                  14
+                </span>
+                <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/30">
+                  Credenciais Top
+                </span>
+              </div>
+              <p className="text-xs text-gray-400 mt-0.5">
+                Especializações de Nível Avançado
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Full-width distribution ticker */}
+        <div className="md:col-span-4 rounded-xl border border-white/[0.06] bg-[#07090f]/60 p-3.5 flex flex-wrap items-center justify-between gap-3 text-xs text-gray-300">
+          <div className="flex items-center gap-2 font-semibold text-white">
+            <Layers className="w-4 h-4 text-indigo-400" />
+            <span>Distribuição de Competências:</span>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 pt-2">
-            {Object.entries(categoriesCount).map(([category, count]) => {
-              const percentage = Math.round((count / totalCerts) * 100);
-              return (
-                <div
-                  key={category}
-                  className="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 hover:border-violet-500/30 transition-colors"
-                >
-                  <div className="flex items-center justify-between text-xs text-gray-400 mb-1">
-                    <span className="font-medium text-gray-300 truncate">
-                      {category}
-                    </span>
-                    <span className="font-mono text-violet-400">{count}</span>
-                  </div>
-                  <div className="w-full bg-white/[0.06] h-1.5 rounded-full overflow-hidden mt-2">
-                    <div
-                      className="bg-gradient-to-r from-violet-500 to-cyan-400 h-full rounded-full transition-all duration-500"
-                      style={{ width: `${Math.max(percentage * 2, 15)}%` }}
-                    />
-                  </div>
-                  <div className="text-[10px] text-gray-400 text-right mt-1 font-mono">
-                    {percentage}% do total
-                  </div>
-                </div>
-              );
-            })}
+          <div className="flex items-center gap-4 flex-wrap">
+            {Object.entries(categoriesCount).map(([cat, count]) => (
+              <div key={cat} className="flex items-center gap-1.5 font-mono text-[11px]">
+                <span className="text-gray-400">{cat}:</span>
+                <span className="px-1.5 py-0.2 rounded bg-white/[0.05] text-indigo-300 font-bold">
+                  {count}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
